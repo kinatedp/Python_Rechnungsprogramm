@@ -12,5 +12,3 @@ if __name__ == "__main__":
 
     Dialog.show()
     sys.exit(app.exec())
-
-    exit(-1)
