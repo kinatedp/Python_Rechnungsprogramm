@@ -99,6 +99,9 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="locale">
+      <locale language="German" country="Germany"/>
+     </property>
      <property name="gridVisible">
       <bool>false</bool>
      </property>
@@ -195,7 +198,7 @@
       <rect>
        <x>680</x>
        <y>110</y>
-       <width>110</width>
+       <width>131</width>
        <height>25</height>
       </rect>
      </property>
@@ -252,7 +255,7 @@
       <rect>
        <x>680</x>
        <y>80</y>
-       <width>110</width>
+       <width>131</width>
        <height>25</height>
       </rect>
      </property>
@@ -349,7 +352,7 @@
        </column>
        <column>
         <property name="text">
-         <string>Position</string>
+         <string>Abzug</string>
         </property>
        </column>
        <column>
@@ -475,9 +478,9 @@
      <property name="geometry">
       <rect>
        <x>910</x>
-       <y>362</y>
+       <y>352</y>
        <width>191</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
@@ -505,7 +508,7 @@
      <property name="geometry">
       <rect>
        <x>900</x>
-       <y>340</y>
+       <y>330</y>
        <width>241</width>
        <height>21</height>
       </rect>
@@ -568,14 +571,18 @@
        <x>1190</x>
        <y>0</y>
        <width>75</width>
-       <height>24</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="text">
-      <string>Reset</string>
+      <string>Eingaben
+löschen</string>
      </property>
     </widget>
     <widget class="QGroupBox" name="chk_AddTaxes">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>910</x>
@@ -589,6 +596,9 @@
      </property>
      <property name="checkable">
       <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
      </property>
      <widget class="QLabel" name="label_12">
       <property name="geometry">
@@ -640,9 +650,9 @@
       <property name="geometry">
        <rect>
         <x>110</x>
-        <y>20</y>
+        <y>15</y>
         <width>71</width>
-        <height>16</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -705,9 +715,9 @@
      <property name="geometry">
       <rect>
        <x>540</x>
-       <y>30</y>
+       <y>15</y>
        <width>161</width>
-       <height>26</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -748,12 +758,12 @@
       <rect>
        <x>130</x>
        <y>60</y>
-       <width>981</width>
+       <width>391</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>x</string>
+      <string>0</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_ErstelleAuswertung">
@@ -763,9 +773,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>100</y>
-       <width>211</width>
-       <height>41</height>
+       <y>90</y>
+       <width>511</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">

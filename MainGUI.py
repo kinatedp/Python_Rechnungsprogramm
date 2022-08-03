@@ -50,7 +50,6 @@ class MainGUI(Ui_Dialog):
         self.loadAndFillConfigPath()
         self.custom_init()
 
-        locale.setlocale(locale.LC_ALL, 'de_DE')
 
     def loadAndFillConfigPath(self):
         self.printInfoToLog("Lese Config-Pfad aus", True)
@@ -132,7 +131,7 @@ class MainGUI(Ui_Dialog):
         # da Sprache auf MAC immer englisch ist, versuch dies auf Deutsch zu forcen
         # in GUI-Datei würde es überschrieben werden
         try:
-            self.calendarWidget.setLocale(QLocale("de_DE"))
+            self.calendarWidget.setLocale(QLocale(QLocale.Language.German))
         except Exception as exc:
             self.printExceptionDetails(exc, True)
 
