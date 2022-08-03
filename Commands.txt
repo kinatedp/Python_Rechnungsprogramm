@@ -1,0 +1,9 @@
+qt6-tools designer
+
+pyuic6 -x gui_rechnungsprog.ui -o gui_rechnungsprog.py
+
+
+python setup.py py2app -A
+
+
+pyinstaller --name="Rechnungsprogramm" --windowed --icon=icon.ico --add-data "icon.ico;." main.py
