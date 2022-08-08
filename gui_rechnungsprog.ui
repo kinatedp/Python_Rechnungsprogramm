@@ -24,7 +24,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QTabWidget" name="tabWidget">
+  <widget class="QTabWidget" name="tabCreateFromJSON">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -34,7 +34,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -1234,7 +1234,7 @@ löschen</string>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
+  <tabstop>tabCreateFromJSON</tabstop>
   <tabstop>cbClients</tabstop>
   <tabstop>tbAuftragsnummer</tabstop>
   <tabstop>tbRechDatum</tabstop>

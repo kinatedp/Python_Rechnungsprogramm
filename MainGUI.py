@@ -25,6 +25,7 @@ import RechnungsAuswertung
 from HelperClasses import CCustomer, CRechnung, CAbzuege, CArticles
 from gui_rechnungsprog import Ui_Dialog
 
+
 table_boarder_thick_bottom = Border(
     left=Side(border_style=BORDER_NONE, color='00000000'),
     right=Side(border_style=BORDER_NONE, color='00000000'),
@@ -740,6 +741,7 @@ class MainGUI(Ui_Dialog):
             self.printInfoToLog("Öffne Rechnung mit Excel", True)
             self.openExcelFileAfterwards()
 
+
     def openExcelFileAfterwards(self):
         if self.chk_OpenFileAfterCreation.isChecked():
             if os.path.isfile(self.fPath_SavedExcel):
@@ -938,46 +940,8 @@ class MainGUI(Ui_Dialog):
 
         return False
 
-    @staticmethod
-    def msgBoxWrapper(strMsg: str):
-        msgBox: QMessageBox = QMessageBox()
-        msgBox.setText(strMsg)
-        msgBox.setWindowTitle("Hinweis")
-        # msgBox.setWindowIcon(QtGui.QIcon('icon.png'))
-        msgBox.setWindowIcon(QtGui.QIcon('icon.ico'))
-        msgBox.exec()
 
-    @staticmethod
-    def msgBoxYesNoWrapper(strMsg: str, strTitel: str):
-        msgBox: QMessageBox = QMessageBox()
-        msgBox.setText(strMsg)
-        msgBox.setWindowTitle(strTitel)
-        # msgBox.setWindowIcon(QtGui.QIcon('icon.png'))
-        msgBox.setWindowIcon(QtGui.QIcon('icon.ico'))
-        msgBox.setStandardButtons(QtWidgets.QMessageBox.StandardButton.Yes | QtWidgets.QMessageBox.StandardButton.No)
-        msgBox.setDefaultButton(QtWidgets.QMessageBox.StandardButton.Yes)
-        retVal = msgBox.exec()
 
-        return retVal
-
-    @staticmethod
-    def setupRechFileName(currRechnung: CRechnung):
-        # Obsolete
-        # dRechDatum = dateutil.parser.parse(currRechnung.strRechnungsdatum)
-        # strMonth = str(dRechDatum.month)
-        # strDay = str(dRechDatum.day)
-
-        # if dRechDatum.month < 10:
-        #    strMonth = "0" + str(dRechDatum.month)
-
-        # if dRechDatum.day < 10:
-        #    strDay = "0" + str(dRechDatum.day)
-
-        # F-Name soll Jahr,  Rechnungsnummer und Kunde beinhalten und nicht das RechDatum
-        # fName_obsolet = str(dRechDatum.year) + "-" + strMonth + "-" + strDay + "_" + currRechnung.strRechnungsNum + "_" + currRechnung.customer.cust_name + ".xlsx"
-
-        fName: str = currRechnung.strRechnungsNum.replace("-", "") + currRechnung.customer.cust_name + ".xlsx"
-        return fName
 
     def handleYearChanged(self, bYearChanged: bool):
         if bYearChanged:
@@ -1282,3 +1246,9 @@ class MainGUI(Ui_Dialog):
 
         fPath: str = os.path.join(os.path.normpath(self.lE_path2ConfigDir.text()), self.lFName_LastRechYear.text())
         self.writeValueToFile(strRechYear, fPath)
+
+
+    @staticmethod
+    def setupRechFileName(currRechnung: CRechnung):
+        fName: str = currRechnung.strRechnungsNum.replace("-", "") + currRechnung.customer.cust_name + ".xlsx"
+        return fName
